@@ -1,8 +1,27 @@
 extends ./layout.jade
 
+block style
+  style
+    include css/result.css
+      
 block content
   section.hero
     .hero-content
       .container
-        h1.title Result
-        h2.subtitle you can do it.
+        h1.title おめでとう!  
+        #idea
+        p.subtitle.is-5 ここに生まれました新しいあなたのアイデアは！         
+          .crossing
+            p.tag.is-info.is-large.cross_a #{main_theme}
+            p.cross ×
+            p.tag.is-info.is-large.cross_b #{sub_theme}
+          .result_idea
+            p.equal =
+            p.idea_detail #{inspiration}
+    hr
+    .tweet
+      p.text Twitterで自慢する
+      a.button.is-primary.twitter-share-button(href='https://twitter.com/share', data-text='【#{main_theme}×#{sub_theme}=#{inspiration}】 アイデア、売るよ！', data-lang='ja',data-url="none", data-size="large", data-hashtags='Condara')
+        i.fa.fa-twitter ツイート
+      script.
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
