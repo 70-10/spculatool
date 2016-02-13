@@ -5,20 +5,19 @@ block style
     include css/combi.css
       
 block content
+  if error_message
+    .container
+      .notification.is-danger.title.is-centered #{error_message}
   section.hero
     .hero-content
       .container
-        if error_message
-          .notification.is-danger #{error_message}
         h1.title 
           span あと
           span.count #{words.length}
           span こ
-        h3.subtitle.is-3 テーマ：#{main_theme}
-  
-  //- section.hero
-  //-   .hero-content
-  //-     .container
+        h3.subtitle.is-3 テーマ : 
+          span.tag.is-large.is-info  #{main_theme}
+
   form(action="/rest" method="POST")
     input(type="hidden" name="main_theme" value=main_theme)
     input(type="hidden" name="word_count" value=words.length)
@@ -28,15 +27,17 @@ block content
     .container
       ul
         each word in words
-          li
-            h4.subtitle.is-4.is-left
-              span.tag.is-large.is-info  #{main_theme}
-              span  × 
-              span.tag.is-large #{word.dataValues.word}
-              //- span  ＝
-            p.control
-              input.input.is-half(name=word.id type="text" placeholder="アイデアをいれろ")
-              input(type="hidden" name="#{word.id}_word" value=word.dataValues.word)
+          li.columns
+            .colmun
+              h4.subtitle.is-4.is-left
+                span.tag.is-large.is-info  #{main_theme}
+                span  × 
+                span.tag.is-large #{word.dataValues.word}
+                span.is-large  ＝ 
+            .column
+              p.control
+                input.input.is-half(name=word.id type="text" placeholder="アイデアをいれろ")
+                input(type="hidden" name="#{word.id}_word" value=word.dataValues.word)
           br
     section.section
       center

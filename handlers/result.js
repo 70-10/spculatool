@@ -8,7 +8,7 @@ module.exports = (request, reply) => {
       reply.view("combi", {
         main_theme: request.payload.main_theme,
         words: result,
-        error_message: "残念! 既存のアイデアです。練り直してください。",
+        error_message: "そのアイデアは既に存在します。練り直してください。",
       });
     });
     // reply.view("combi", {
