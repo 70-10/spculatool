@@ -13,3 +13,17 @@ block content
           span.count #{words.length}
           span こ
         h2.subtitle you can do it.
+
+  section.section
+    ul
+      each word in words
+        li
+          p.control.is-grouped
+            a.button.is-info
+              //- span 主テーマ
+              span ×
+              span  #{word.dataValues.word}
+              span  ＝
+            input.input.is-half(type="text" placeholder="アイデアをいれろ")
+        br
+    button.button.is-centered.is-inline 全部いれた！
