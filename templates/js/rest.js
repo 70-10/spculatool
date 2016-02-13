@@ -9,6 +9,7 @@ $(function() {
       $(".condara-time-str").text(toHms(time));
       if (time == 0) {
         $(".condara-button").removeClass("is-disabled");
+        $("form").submit();
       }
     } else {
       clearInterval(interval);
