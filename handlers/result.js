@@ -1,3 +1,4 @@
+const _ = require("lodash");
 const Database = require("../database");
 
 module.exports = (request, reply) => {
@@ -10,6 +11,9 @@ module.exports = (request, reply) => {
         main_theme: request.payload.main_theme,
         words: result,
         error_message: "そのアイデアは既に存在します。練り直してください。",
+        wordIds: JSON.stringify(_.map(result, (element, index, array) => {
+          return element.dataValues.id;
+        })),
       });
     });
 

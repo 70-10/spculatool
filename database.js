@@ -3,7 +3,7 @@
 const Sequelize = require("sequelize");
 var conf = require('config');
 
-const sequelize = new Sequelize(conf.database_name, "root", "", { host: "localhost", port: 3306});
+const sequelize = new Sequelize(conf.database_name, conf.database_user, conf.database_pass, { host: conf.database_host, port: 3306});
 
 const Word = sequelize.define("word", {
   word: Sequelize.STRING
