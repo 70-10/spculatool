@@ -19,6 +19,7 @@
   "homepage": "https://github.com/70-10/speculatool#readme",
   "dependencies": {
     "bulma": "0.0.12",
+    "config": "^1.19.0",
     "hapi": "13.0.0",
     "jade": "1.11.0",
     "lodash": "4.3.0",
