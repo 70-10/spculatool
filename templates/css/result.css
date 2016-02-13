@@ -15,10 +15,13 @@ p.idea_detail {
     font-size: 30px;
     vertical-align: middle;
 }
+section.section {
+    padding-top: 0px;
+}
 .tweet {
     display: table;
     margin: auto;
-    padding-bottom: 20px;
+    padding: 30px;
 }
 .tweet p.text, .tweet iframe {
     display: table-cell;
