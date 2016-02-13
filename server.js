@@ -1,6 +1,7 @@
 "use strict";
 
 const Hapi = require("hapi");
+const Handler = require("./handlers");
 
 const Database = require("./database");
 
@@ -10,43 +11,6 @@ server.connection({
   host: "localhost",
   port: 8000
 });
-
-const rootHandler = (request, reply) => {
-  reply.view("index", {
-    title: "examples/views/jade/index.js | Hapi " + request.server.version,
-    message: "Index - Hello World!"
-  });
-};
-
-const combiHandler = (request, reply) => {
-  Database.findAllWord(result => {
-    reply.view("combi", {
-      title: "examples/views/jade/index.js | Hapi " + request.server.version,
-      message: "About - Hello World!",
-      words: result,
-    });
-  });
-};
-
-const restHandler = (request, reply) => {
-  reply.view("rest", {
-    title: "examples/views/jade/index.js | Hapi " + request.server.version,
-    message: "About - Hello World!"
-  });
-};
-
-const inspiHandler = (request, reply) => {
-  reply.view("inspi", {
-    title: "examples/views/jade/index.js | Hapi " + request.server.version,
-    message: "About - Hello World!"
-  });
-};
-const resultHandler = (request, reply) => {
-  reply.view("result", {
-    title: "examples/views/jade/index.js | Hapi " + request.server.version,
-    message: "About - Hello World!"
-  });
-};
 
 server.register(require("vision"), (err) => {
 
@@ -62,24 +26,13 @@ server.register(require("vision"), (err) => {
     }
   });
 
-  server.route({ method: "GET", path: "/", handler: rootHandler });
-  server.route({ method: "GET", path: "/combi", handler: combiHandler });
-  server.route({ method: "GET", path: "/rest", handler: restHandler });
-  server.route({ method: "GET", path: "/inspi", handler: inspiHandler });
-  server.route({ method: "GET", path: "/result", handler: resultHandler });
+  server.route({ method: "GET", path: "/", handler: Handler.root });
+  server.route({ method: "GET", path: "/combi", handler: Handler.combi });
+  server.route({ method: "GET", path: "/rest", handler: Handler.rest });
+  server.route({ method: "GET", path: "/inspi", handler: Handler.inspi });
+  server.route({ method: "GET", path: "/result", handler: Handler.result });
 
 });
-
-
-// Add the route
-// server.route({
-//   method: "GET",
-//   path: "/",
-//   handler: function (request, reply) {
-//
-//     return reply("hello world");
-//   }
-// });
 
 // Start the server
 server.start((err) => {
