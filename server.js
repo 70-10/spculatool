@@ -30,7 +30,6 @@ server.register(require("vision"), (err) => {
   server.route({ method: "POST", path: "/combi", handler: Handler.combi });
   server.route({ method: "POST", path: "/rest", handler: Handler.rest });
   server.route({ method: "POST", path: "/inspi", handler: Handler.inspi });
-  server.route({ method: "GET", path: "/result", handler: Handler.result });
   server.route({ method: "POST", path: "/result", handler: Handler.result });
 
 });

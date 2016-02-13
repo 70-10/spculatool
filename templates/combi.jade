@@ -8,6 +8,8 @@ block content
   section.hero
     .hero-content
       .container
+        if error_message
+          .notification.is-danger #{error_message}
         h1.title 
           span あと
           span.count #{words.length}
