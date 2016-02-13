@@ -1,0 +1,26 @@
+{
+  "name": "speculatool",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/70-10/speculatool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/70-10/speculatool/issues"
+  },
+  "homepage": "https://github.com/70-10/speculatool#readme",
+  "dependencies": {
+    "bulma": "0.0.12",
+    "hapi": "13.0.0",
+    "jade": "1.11.0",
+    "vision": "4.0.1"
+  }
+}
