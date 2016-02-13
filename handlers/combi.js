@@ -14,7 +14,7 @@ module.exports = (request, reply) => {
   Database.findWithoutWord(main_theme, result => {
     reply.view("combi", {
       nav_title: "2. インプットした情報同士を組み合わせる",
-      main_theme: request.payload.main_theme,
+      main_theme: main_theme,
       words: result,
     });
   });
