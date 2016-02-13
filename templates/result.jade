@@ -3,25 +3,30 @@ extends ./layout.jade
 block style
   style
     include css/result.css
-      
+
 block content
   section.hero
+
+  if postData
     .hero-content
       .container
         h1.title おめでとう!  
         #idea
         p.subtitle.is-5 ここに生まれました新しいあなたのアイデアは！         
           .crossing
-            p.cross_a #{main_theme}
+            p.cross_a #{postData.main_theme}
             p.cross ×
-            p.cross_b #{sub_theme}
+            p.cross_b #{postData.sub_theme}
           .result_idea
             p.equal =
-            p.idea_detail #{inspiration}
+            p.idea_detail #{postData.inspiration}
     hr
     .tweet
       p.text Twitterで自慢する
-      a.button.is-primary.twitter-share-button(href='https://twitter.com/share', data-text='【#{main_theme}×#{sub_theme}=#{inspiration}】 アイデア、売るよ！', data-lang='ja',data-url="none", data-size="large", data-hashtags='Condara')
+      a.button.is-primary.twitter-share-button(href='https://twitter.com/share', data-text='【#{postData.main_theme}×#{postData.sub_theme}=#{postData.inspiration}】 アイデア、売るよ！', data-lang='ja',data-url="none", data-size="large", data-hashtags='Condara')
         i.fa.fa-twitter ツイート
       script.
         !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  else
+    .notification.is-danger ERROR! 不正なページ移動です
+      button.delete
