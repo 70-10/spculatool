@@ -15,16 +15,32 @@ block content
         form(action="/inspi" method="POST")
           input(type="hidden" name="main_theme" value=main_theme)
           input(type="hidden" name="idea_list" value=idea_list)
-          button.button.is-success.is-disabled.condara-button 休憩おわり
+          button.button.is-success.is-disabled.is-medium.condara-button ひらめいた!
     section.section
-      h1.title #{rest_time_str}でできること
-      .container
-        p.control
-          label.checkbox
-            input(type="checkbox")
-            span トイレにいく
-          label.checkbox
-            input(type="checkbox")
-            span コンビニにいく
+      span.tag.is-medium 休憩メニュー
+      table.table
+        thead
+          tr
+            th check
+            th action
+        tbody
+          tr
+            td 
+              input(type='checkbox')
+            td トイレに行く
+          tr
+            td 
+              input(type='checkbox')
+            td コンビニへ行く
+          tr
+            td 
+              input(type='checkbox')
+            td りんごの木を眺める
+          tr
+            td 
+              input(type='checkbox')
+            td タバコを吸う
+          
+      
     script
       include js/rest.js
