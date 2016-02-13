@@ -15,16 +15,18 @@ module.exports = (request, reply) => {
 };
 
 function createIdeaList(formData) {
-  const count = parseInt(formData.word_count);
+  const wordIds = JSON.parse(formData.word_ids);
 
   var list = [];
-  for (var i = 1; i <= count; i++) {
+  for (id of wordIds) {
     var idea = {
-      id: formData[i],
-      word: formData[`${i}_word`]
+      id: formData[id],
+      word: formData[`${id}_word`]
     };
+
     list.push(idea);
   }
+
   return list;
 }
 

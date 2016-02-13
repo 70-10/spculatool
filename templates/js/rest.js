@@ -6,7 +6,7 @@ $(function() {
       var time = current - 1;
       $(".condara-time").text(time);
       $(".condara-time-str").text(toHms(time));
-      if (time == 0) {;
+      if (time == 0) {
         $("form").submit();
       }
     } else {
