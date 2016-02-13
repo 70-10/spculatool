@@ -2,7 +2,9 @@ const moment = require("moment");
 
 module.exports = (request, reply) => {
   const ideaList = createIdeaList(request.payload);
-  const oneHour = 3;
+  console.log(ideaList);
+  const oneHour = 180;
+
   reply.view("rest", {
     nav_title: "3. 一旦やったことは忘れる",
     main_theme: request.payload.main_theme,
