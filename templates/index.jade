@@ -1,18 +1,25 @@
 extends ./layout.jade
 
+block style
+  style
+    include css/index.css
+    
 block content
   section.hero
     .hero-content
       .container
-        h1.title Speculatool
-        p.control
-        span.select
-          select
-            option Select dropdown
-            option With options
-        p.control
-        a.button.is-primary 甘め
-        a.button.is-danger 厳しめ
+        h1.title Condara
+        h2.subtitle you can do it.
+        p
+          span.select
+            select
+              option Select dropdown
+              option With options
+        p
+          a.button.is-primary 甘め      
+          a.button.is-success 普通      
+          a.button.is-danger 厳しめ
+          
 
 
         
