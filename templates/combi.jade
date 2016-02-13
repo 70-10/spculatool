@@ -1,8 +1,15 @@
 extends ./layout.jade
 
+block style
+  style
+    include css/combi.css
+      
 block content
   section.hero
     .hero-content
       .container
-        h1.title Combination
+        h1.title 
+          span あと
+          span.count #{words.length}
+          span こ
         h2.subtitle you can do it.

@@ -1,4 +1,8 @@
+"use strict";
+
 const Hapi = require("hapi");
+
+const Database = require("./database");
 
 // Create a server with a host and port
 const server = new Hapi.Server();
@@ -15,9 +19,12 @@ const rootHandler = (request, reply) => {
 };
 
 const combiHandler = (request, reply) => {
-  reply.view("combi", {
-    title: "examples/views/jade/index.js | Hapi " + request.server.version,
-    message: "About - Hello World!"
+  Database.findAllWord(result => {
+    reply.view("combi", {
+      title: "examples/views/jade/index.js | Hapi " + request.server.version,
+      message: "About - Hello World!",
+      words: result,
+    });
   });
 };
 
