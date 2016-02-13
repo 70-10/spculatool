@@ -1,9 +1,7 @@
 const moment = require("moment");
 
 module.exports = (request, reply) => {
-  console.log(request.payload);
   const ideaList = createIdeaList(request.payload);
-  console.log(ideaList);
   const oneHour = 3;
   reply.view("rest", {
     nav_title: "3. 一旦やったことは忘れる",

@@ -4,7 +4,6 @@ $(function() {
     var current = parseInt($(".condara-time").text());
     if (current > 0) {
       var time = current - 1;
-      console.log(time);
       $(".condara-time").text(time);
       $(".condara-time-str").text(toHms(time));
       if (time == 0) {

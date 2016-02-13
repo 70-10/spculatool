@@ -12,7 +12,7 @@ block content
         form(action="/result" method="POST")
           .themes
             .main_theme
-              p #{main_theme}
+              span.tag.is-large.is-info #{main_theme}
               input(type="hidden" name="main_theme" value=main_theme)
             .cross ×
             span.select
