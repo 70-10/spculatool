@@ -10,8 +10,7 @@ module.exports = (request, reply) => {
     return map;
   }));
   reply.view("inspi", {
-    title: "examples/views/jade/index.js | Hapi " + request.server.version,
-    message: "About - Hello World!",
+    main_theme: formData.main_theme,
     postData: request.payload,
     words: _.map(ideaJSON, (element, index, array) => {
       return element.word;

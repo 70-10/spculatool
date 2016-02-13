@@ -18,6 +18,7 @@ block content
   //-   .hero-content
   //-     .container
   form(action="/rest" method="POST")
+    input(type="hidden" name="main_theme" value=main_theme)
     input(type="hidden" name="word_count" value=words.length)
     section.section
       center

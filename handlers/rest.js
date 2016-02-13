@@ -4,8 +4,9 @@ module.exports = (request, reply) => {
   console.log(request.payload);
   const ideaList = createIdeaList(request.payload);
   console.log(ideaList);
-  const oneHour = 5;
+  const oneHour = 3;
   reply.view("rest", {
+    main_theme: request.payload.main_theme,
     rest_time_str: toHms(oneHour),
     rest_time: oneHour,
     idea_list: JSON.stringify(ideaList)
