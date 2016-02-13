@@ -4,7 +4,7 @@ module.exports = (request, reply) => {
   console.log(request.payload);
   const ideaList = createIdeaList(request.payload);
   console.log(ideaList);
-  const oneHour = 3;
+  const oneHour = 180;
   reply.view("rest", {
     nav_title: "3. 一旦やったことは忘れる",
     main_theme: request.payload.main_theme,
