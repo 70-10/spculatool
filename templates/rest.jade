@@ -5,39 +5,23 @@ block style
     include css/rest.css
     
 block content
-  //- script
-  //-   function toHms(t) {
-  //-     var hms = "";
-  //-     var h = t / 3600 | 0;
-  //-     var m = t % 3600 / 60 | 0;
-  //-     var s = t % 60;
-  //- 
-  //-     if (h != 0) {
-  //-       hms = h + "時間" + padZero(m) + "分" + padZero(s) + "秒";
-  //-     } else if (m != 0) {
-  //-       hms = m + "分" + padZero(s) + "秒";
-  //-     } else {
-  //-       hms = s + "秒";
-  //-     }
-  //- 
-  //-     return hms;
-  //- 
-  //-     function padZero(v) {
-  //-       if (v < 10) {
-  //-         return "0" + v;
-  //-       } else {
-  //-         return v;
-  //-       }
-  //-     }
-  //-   }
-
   section.hero
     .hero-content
       .container
-        h1.title Rest 
+        h1.title 休憩タイム
+        h2.subtitle ひらめきなさい
         h1.title.condara-time-str #{rest_time_str}
         .condara-time #{rest_time}
-        h2.subtitle you can do it.
         button.button.is-success.is-disabled.condara-button 休憩おわり
+    section.section
+      h1.title #{rest_time_str}でできること
+      .container
+        p.control
+          label.checkbox
+            input(type="checkbox")
+            トイレにいく
+          label.checkbox
+            input(type="checkbox")
+            コンビニにいく
     script
       include js/rest.js
