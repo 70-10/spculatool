@@ -1,8 +1,27 @@
 extends ./layout.jade
 
+block style
+  style
+    include css/inspi.css
+
 block content
   section.hero
     .hero-content
       .container
-        h1.title Inspiration
-        h2.subtitle you can do it.
+        h1.title ひらめけ
+        form(action="/result" method="POST")
+          .themes
+            .main_theme
+              p メインテーマ
+              input(type="hidden" name="main_theme")
+            .cross ×
+            span.select
+              select.select(name=sub_theme)
+                each word in words
+                  option #{word}
+            .equal =
+          p.control
+            input.input(type="text" name="inspiration" placeholder="input your inspiration!")
+          .submit
+            p.control
+              button.button.is-primary ひらめいた!

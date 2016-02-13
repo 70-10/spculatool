@@ -1,0 +1,15 @@
+.themes {
+  display: table;
+  margin: auto;
+  padding-bottom: 25px;
+}
+.themes div{
+  display: table-cell;
+  vertical-align: middle;
+}
+.cross, .equal {
+  padding: 0px 10px;
+}
+.submit .control{
+  text-align: right;
+}
