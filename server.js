@@ -28,7 +28,7 @@ server.register(require("vision"), (err) => {
 
   server.route({ method: "GET", path: "/", handler: Handler.root });
   server.route({ method: "GET", path: "/combi", handler: Handler.combi });
-  server.route({ method: "GET", path: "/rest", handler: Handler.rest });
+  server.route({ method: "POST", path: "/rest", handler: Handler.rest });
   server.route({ method: "GET", path: "/inspi", handler: Handler.inspi });
   server.route({ method: "GET", path: "/result", handler: Handler.result });
 
