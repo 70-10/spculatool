@@ -1,0 +1,6 @@
+{
+  "database_host": "172.17.7.100",
+  "database_name": "gengar",
+  "database_user": "gengar",
+  "database_pass": "gengar"
+}

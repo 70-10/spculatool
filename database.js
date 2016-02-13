@@ -1,8 +1,9 @@
 "use strict";
 // const mysql = require("mysql");
 const Sequelize = require("sequelize");
+var conf = require('config');
 
-const sequelize = new Sequelize("speculatool", "root", "root", { host: "192.168.99.100", port: 3306});
+const sequelize = new Sequelize(conf.database_name, conf.database_user, conf.database_pass, { host: conf.database_host, port: 3306});
 
 const Word = sequelize.define("word", {
   word: Sequelize.STRING
