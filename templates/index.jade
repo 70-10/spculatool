@@ -1,16 +1,8 @@
-doctype html
-html(lang="en")
-  head
-    title= pageTitle
-    script(type='text/javascript').
-      if (foo) {
-         bar(1 + 5)
-      }
-    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css")
-    link(rel="stylesheet" href="https://cdn.rawgit.com/jgthms/bulma/master/css/bulma.min.css")
-  body
-    section.hero
-      .hero-content
-        .container
-          h1.title Speculatool
-          h2.subtitle you can do it.
+extends ./layout.jade
+
+block content
+  section.hero
+    .hero-content
+      .container
+        h1.title Speculatool
+        h2.subtitle you can do it.
