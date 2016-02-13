@@ -6,8 +6,11 @@ block style
       
 block content
   if error_message
-    .container
-      .notification.is-danger.title.is-centered #{error_message}
+    section.section
+      .container
+        .message.is-danger
+          .message-header ERROR
+          .message-body.is-danger.is-centered #{error_message}
   section.hero
     .hero-content
       .container
@@ -18,7 +21,7 @@ block content
         h3.subtitle.is-3 テーマ : 
           span.tag.is-large.is-info  #{main_theme}
 
-  form(action="/rest" method="POST")
+  form(action="/rest" method="POST").section
     input(type="hidden" name="main_theme" value=main_theme)
     input(type="hidden" name="word_count" value=words.length)
     section.section

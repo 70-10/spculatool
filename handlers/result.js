@@ -6,19 +6,16 @@ module.exports = (request, reply) => {
     console.log(request.payload);
     Database.findAllWord(result => {
       reply.view("combi", {
+        nav_title: "2. インプットした情報同士を組み合わせる",
         main_theme: request.payload.main_theme,
         words: result,
         error_message: "そのアイデアは既に存在します。練り直してください。",
       });
     });
-    // reply.view("combi", {
-    //   main_theme: "メインテーマ",
-    //   words: request.payload.words,
-    // });
 
   } else {
     reply.view("result", {
-      title: "examples/views/jade/index.js | Hapi " + request.server.version,
+      nav_title: "5. まとめる",
       postData: request.payload
     });
   }

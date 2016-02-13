@@ -6,6 +6,7 @@ module.exports = (request, reply) => {
   console.log(ideaList);
   const oneHour = 3;
   reply.view("rest", {
+    nav_title: "3. 一旦やったことは忘れる",
     main_theme: request.payload.main_theme,
     rest_time_str: toHms(oneHour),
     rest_time: oneHour,
