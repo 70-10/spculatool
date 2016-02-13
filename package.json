@@ -19,10 +19,11 @@
   "homepage": "https://github.com/70-10/speculatool#readme",
   "dependencies": {
     "bulma": "0.0.12",
+    "date-utils": "^1.2.18",
+    "express": "*",
     "hapi": "13.0.0",
     "jade": "1.11.0",
-    "vision": "4.0.1",
-    "express": "*",
-    "twitter": "*"
+    "twitter": "*",
+    "vision": "4.0.1"
   }
 }
