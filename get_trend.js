@@ -57,7 +57,7 @@ var insertData = function (word) {
     var _word = word;
     connection.query("SELECT word FROM `words` WHERE `word` = '" + word + "';", 
                   function (error, results, fields) {
-                    if (results.length === 0) {
+                    if (!results || results.length === 0) {
                       connection.query("INSERT INTO `words` (`word`, `createdAt`, `updatedAt`) VALUES ('" + _word + "','" + create_at + "','" + update_at + "');", 
                                       function (error, results, fields) {
                                         console.log(results);
