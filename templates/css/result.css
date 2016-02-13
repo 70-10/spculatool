@@ -1,0 +1,35 @@
+.result-content, .tweet {
+  text-align: center; 
+}
+.crossing {
+    margin-bottom: 15px;
+}
+.crossing p, .result_idea p{
+  display: inline-block;
+  vertical-align: middle;
+}
+p.cross_a, p.cross_b {
+    font-size: 20px;
+}
+p.idea_detail {
+    font-size: 30px;
+    vertical-align: middle;
+}
+.tweet {
+    display: table;
+    margin: auto;
+    padding-bottom: 20px;
+}
+.tweet p.text, .tweet iframe {
+    display: table-cell;
+    vertical-align: middle;
+}
+.tweet p.text {
+  padding-right: 10px;
+}
+hr {
+  margin: 0px 30px 10px;
+}
+.notification {
+  margin: 10px;
+}
