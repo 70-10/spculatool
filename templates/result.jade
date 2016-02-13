@@ -20,7 +20,7 @@ block content
           span.subtitle.is-3 #{postData.inspiration}
   section.section
     center
-        button.button.is-medium.is-primary もう一度アイデアをつくる
+          a.button.is-primary.is-medium(href="/") もう一度アイデアをつくる
     .tweet
       //- p.text Twitterで自慢する
       a.button.is-primary.twitter-share-button(href='https://twitter.com/share', data-text='【#{postData.main_theme}×#{postData.sub_theme}=#{postData.inspiration}】 アイデア、売るよ！', data-lang='ja',data-url="none", data-size="large", data-hashtags='Condara')
