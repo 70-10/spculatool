@@ -2,13 +2,30 @@ const moment = require("moment");
 
 module.exports = (request, reply) => {
   console.log(request.payload);
+  const ideaList = createIdeaList(request.payload);
+  console.log(ideaList);
   const oneHour = 5;
   reply.view("rest", {
     rest_time_str: toHms(oneHour),
-    rest_time: oneHour
+    rest_time: oneHour,
+    idea_list: JSON.stringify(ideaList)
   });
 };
-//
+
+function createIdeaList(formData) {
+  const count = parseInt(formData.word_count);
+
+  var list = [];
+  for (var i = 1; i <= count; i++) {
+    var idea = {
+      id: formData[i],
+      word: formData[`${i}_word`]
+    };
+    list.push(idea);
+  }
+  return list;
+}
+
 function toHms(t) {
   var hms = "";
   var h = t / 3600 | 0;

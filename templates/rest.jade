@@ -12,16 +12,19 @@ block content
         h2.subtitle ひらめきなさい
         h1.title.condara-time-str #{rest_time_str}
         .condara-time #{rest_time}
-        button.button.is-success.is-disabled.condara-button 休憩おわり
+        form(action="/inspi" method="POST")
+          span #{idea_list}
+          input(type="hidden" name="idea_list" value=idea_list)
+          button.button.is-success.is-disabled.condara-button 休憩おわり
     section.section
       h1.title #{rest_time_str}でできること
       .container
         p.control
           label.checkbox
             input(type="checkbox")
-            トイレにいく
+            span トイレにいく
           label.checkbox
             input(type="checkbox")
-            コンビニにいく
+            span コンビニにいく
     script
       include js/rest.js
