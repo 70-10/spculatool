@@ -42,8 +42,6 @@ var woeid = {"nkyu": "1110809", // "北九州"
              "okay": "90036018"  // "岡山"
             };
 
-  console.log(woeid.japa);
-
 var getTrend = function (callback) {
   client.get('trends/place',{ id: woeid.japa}, function(error, tweets, response){
     if(error) console.log(error);
