@@ -19,9 +19,8 @@ block content
               select.select(name="sub_theme")
                 each word in words
                   option #{word}
-            .equal =
           p.control
-            input.input(type="text" name="inspiration" placeholder="input your inspiration!")
+            textarea.textarea(name="inspiration" placeholder="input your inspiration!")
           .submit
             p.control
               button.button.is-primary ひらめいた!
