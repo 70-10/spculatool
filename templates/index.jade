@@ -15,16 +15,20 @@ block content
             rt コンダラ
             rp )
         h2.subtitle you can do it.
-        p
-          span.select
-            select
-              option Select dropdown
-              option With options
-        p
-          a.button.is-primary 甘め
-          a.button.is-success 普通
-          a.button.is-danger 厳しめ
+        form(action="/combi" method="POST")
+          p
+            input.input(type='text', placeholder='Text input' name='main_theme')
+          p
+            input(type='radio', name='strength', value='weak')
+            | 弱め
+            label.radio
+            input(type='radio', name='strength', value='normal')
+            | 普通
+            label.radio
+            input(type='radio', name='strength', value='strong')
+            | 強め
+          p
+             button.button.is-primary 考える
+        
           
-
-
         
