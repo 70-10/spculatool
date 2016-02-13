@@ -12,6 +12,7 @@ $(function() {
     var v, old = elm.value;
     return function(){
       if(old != (v=elm.value)){
+        old = v;
         var containsIdea = false;
         var ideaCount = 0;
         $(".condara-idea").each(function() {
