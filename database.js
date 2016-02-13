@@ -31,6 +31,24 @@ class Database {
           callback(result);
         });
   }
+
+  static findWord(w, callback) {
+    Word.findAll({where:["word=?",w]}).then(function(result) {
+      callback(result);
+    });
+  }
+  static findWithoutWord(w, callback) {
+   Word.findAll({where:["word<>?",w]}).then(function(result) {
+      callback(result);
+    }); 
+  }
+  static insertWord (w, callback) {
+     var new_word = Word.build({
+        word: w
+      });
+     new_word.save();
+
+  }
 }
 
 module.exports = Database;
