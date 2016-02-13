@@ -13,10 +13,10 @@ block content
           .themes
             .main_theme
               p メインテーマ
-              input(type="hidden" name="main_theme")
+              input(type="hidden" name="main_theme" value="メインテーマ")
             .cross ×
             span.select
-              select.select(name=sub_theme)
+              select.select(name="sub_theme")
                 each word in words
                   option #{word}
             .equal =
