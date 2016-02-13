@@ -16,11 +16,15 @@ block content
               input(type="hidden" name="main_theme" value="メインテーマ")
             .cross ×
             span.select
-              select.select(name="sub_theme")
+              select.select.condara-select(name="sub_theme")
                 each word in words
                   option #{word}
           p.control
-            textarea.textarea(name="inspiration" placeholder="input your inspiration!")
+            textarea.textarea.condara-textarea(name="inspiration" placeholder="input your inspiration!")
           .submit
             p.control
               button.button.is-primary ひらめいた!
+  
+  .condara-inspi #{word_to_inspi}
+  script
+    include js/inspi.js
