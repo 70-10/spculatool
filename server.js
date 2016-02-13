@@ -7,38 +7,60 @@ server.connection({
   port: 8000
 });
 
-const rootHandler = function (request, reply) {
-
-    reply.view('index', {
-        title: 'examples/views/jade/index.js | Hapi ' + request.server.version,
-        message: 'Index - Hello World!'
-    });
+const rootHandler = (request, reply) => {
+  reply.view("index", {
+    title: "examples/views/jade/index.js | Hapi " + request.server.version,
+    message: "Index - Hello World!"
+  });
 };
 
-const aboutHandler = function (request, reply) {
-
-    reply.view('about', {
-        title: 'examples/views/jade/index.js | Hapi ' + request.server.version,
-        message: 'About - Hello World!'
-    });
+const combiHandler = (request, reply) => {
+  reply.view("combi", {
+    title: "examples/views/jade/index.js | Hapi " + request.server.version,
+    message: "About - Hello World!"
+  });
 };
 
-server.register(require('vision'), (err) => {
+const restHandler = (request, reply) => {
+  reply.view("rest", {
+    title: "examples/views/jade/index.js | Hapi " + request.server.version,
+    message: "About - Hello World!"
+  });
+};
 
-    if (err) {
-        throw err;
+const inspiHandler = (request, reply) => {
+  reply.view("inspi", {
+    title: "examples/views/jade/index.js | Hapi " + request.server.version,
+    message: "About - Hello World!"
+  });
+};
+const resultHandler = (request, reply) => {
+  reply.view("result", {
+    title: "examples/views/jade/index.js | Hapi " + request.server.version,
+    message: "About - Hello World!"
+  });
+};
+
+server.register(require("vision"), (err) => {
+
+  if (err) {
+    throw err;
+  }
+
+  server.views({
+    engines: { jade: require("jade") },
+    path: __dirname + "/templates",
+    compileOptions: {
+      pretty: true
     }
+  });
 
-    server.views({
-        engines: { jade: require('jade') },
-        path: __dirname + '/templates',
-        compileOptions: {
-            pretty: true
-        }
-    });
+  server.route({ method: "GET", path: "/", handler: rootHandler });
+  server.route({ method: "GET", path: "/combi", handler: combiHandler });
+  server.route({ method: "GET", path: "/rest", handler: restHandler });
+  server.route({ method: "GET", path: "/inspi", handler: inspiHandler });
+  server.route({ method: "GET", path: "/result", handler: resultHandler });
 
-    server.route({ method: 'GET', path: '/', handler: rootHandler });
-    server.route({ method: 'GET', path: '/about', handler: aboutHandler });
 });
 
 
