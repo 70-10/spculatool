@@ -12,11 +12,11 @@ block content
           span あと
           span.count #{words.length}
           span こ
+        h3.subtitle.is-3 テーマ：#{main_theme}
   
-  section.hero
-    .hero-content
-      .container
-        h1.title #{main_theme}
+  //- section.hero
+  //-   .hero-content
+  //-     .container
   form(action="/rest" method="POST")
     input(type="hidden" name="word_count" value=words.length)
     section.section
@@ -28,11 +28,10 @@ block content
           li
             h4.subtitle.is-4.is-left
               span.tag.is-large #{word.dataValues.word}
-            p.control.is-grouped
-              a.button.is-info
-                span ×
-                span  #{main_theme}
-                span  ＝
+              span  × 
+              span.tag.is-large.is-info  #{main_theme}
+              //- span  ＝
+            p.control
               input.input.is-half(name=word.id type="text" placeholder="アイデアをいれろ")
               input(type="hidden" name="#{word.id}_word" value=word.dataValues.word)
           br
