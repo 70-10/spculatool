@@ -1,8 +1,27 @@
 extends ./layout.jade
 
+block style
+  style
+    include css/rest.css
+    
 block content
   section.hero
     .hero-content
       .container
-        h1.title Rest
-        h2.subtitle you can do it.
+        h1.title 休憩タイム
+        h2.subtitle ひらめきなさい
+        h1.title.condara-time-str #{rest_time_str}
+        .condara-time #{rest_time}
+        button.button.is-success.is-disabled.condara-button 休憩おわり
+    section.section
+      h1.title #{rest_time_str}でできること
+      .container
+        p.control
+          label.checkbox
+            input(type="checkbox")
+            トイレにいく
+          label.checkbox
+            input(type="checkbox")
+            コンビニにいく
+    script
+      include js/rest.js
