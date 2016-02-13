@@ -18,19 +18,18 @@ block content
         form(action="/combi" method="POST")
           p
             input.input(type='text', placeholder="メインテーマを入力してください" name='main_theme')
-          br
-          br
-          p.control.is-inline
-            label.radio
-              input(type="radio" name="level" value="weak")
-              span 弱め
-            label.radio
-              input(type="radio" name="level" value="normal" checked="checked")
-              span 普通
-            label.radio
-              input(type="radio" name="level" value="strong")
-              span 強め
+          input(type="hidden" name="level" value="strong")
+          //- p.control.is-inline
+          //-   label.radio.condara-level
+          //-     input(type="radio" name="level" value="weak")
+          //-     span 弱め
+          //-   label.radio.condara-level
+          //-     input(type="radio" name="level" value="normal" checked="checked")
+          //-     span 普通
+          //-   label.radio.condara-level
+          //-     input(type="radio" name="level" value="strong")
+          //-     span 強め
           p
-             button.button.is-primary 考える
+             button.button.is-primary アイデアをつくる
         
           
