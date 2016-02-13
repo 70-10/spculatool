@@ -24,15 +24,15 @@ block content
     input(type="hidden" name="word_count" value=words.length)
     section.section
       center
-        button.button.is-centered.is-disabled.combi-button 全部いれた！
+        button.button.is-centered.is-disabled.combi-button もう無理
     .container
       ul
         each word in words
           li
             h4.subtitle.is-4.is-left
-              span.tag.is-large #{word.dataValues.word}
-              span  × 
               span.tag.is-large.is-info  #{main_theme}
+              span  × 
+              span.tag.is-large #{word.dataValues.word}
               //- span  ＝
             p.control
               input.input.is-half(name=word.id type="text" placeholder="アイデアをいれろ")
@@ -40,6 +40,6 @@ block content
           br
     section.section
       center
-        button.button.is-centered.is-disabled.combi-button 全部いれた！
+        button.button.is-centered.is-disabled.combi-button もう無理
     script
       include js/combi.js

@@ -4,6 +4,6 @@ $(function() {
   }, 10);
 
   function pushableButton() {
-    $(".combi-button").removeClass("is-disabled").addClass("is-success");
+    $(".combi-button").removeClass("is-disabled").addClass("is-danger");
   }
 });
