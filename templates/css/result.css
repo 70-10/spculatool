@@ -1,5 +1,5 @@
 .result-content, .tweet {
-  text-align: center; 
+  text-align: center;
 }
 .crossing {
     margin-bottom: 15px;
@@ -32,4 +32,7 @@ hr {
 }
 .notification {
   margin: 10px;
+}
+.condara-title {
+  padding-bottom: 10px !important;
 }

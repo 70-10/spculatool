@@ -6,26 +6,24 @@ block style
 
 block content
   section.hero
-  if postData
-    center
-      .hero-content
-        .container
-          h1.title おめでとう!  
-          #idea
-          p.subtitle.is-5 新しいアイデアが生まれました！         
-            .crossing
-              p.cross_a #{postData.main_theme}
-              p.cross ×
-              p.cross_b #{postData.sub_theme}
-            .result_idea
-              p.idea_detail #{postData.inspiration}
-      hr
-      .tweet
-        p.text Twitterで自慢する
-        a.button.is-primary.twitter-share-button(href='https://twitter.com/share', data-text='【#{postData.main_theme}×#{postData.sub_theme}=#{postData.inspiration}】 アイデア、売るよ！', data-lang='ja',data-url="none", data-size="large", data-hashtags='Condara')
-          i.fa.fa-twitter ツイート
-        script.
-          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-  else
-    .notification.is-danger ERROR! 不正なページ移動です
-      button.delete
+    .hero-content.condara-title
+        h1.title おめでとう!
+        h5.subtitle.is-5 新しいアイデアが生まれました！
+  section.hero
+    .hero-content
+      h4.subtitle.is-4
+        span.tag.is-large.is-info #{postData.main_theme}
+        span  × 
+        span.tag.is-large #{postData.sub_theme}
+      .container
+        .notification.is-success
+          span.subtitle.is-3 #{postData.inspiration}
+      
+  .tweet
+    //- p.text Twitterで自慢する
+    a.button.is-primary.twitter-share-button(href='https://twitter.com/share', data-text='【#{postData.main_theme}×#{postData.sub_theme}=#{postData.inspiration}】 アイデア、売るよ！', data-lang='ja',data-url="none", data-size="large", data-hashtags='Condara')
+    script.
+      !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  //- else
+  //-   .notification.is-danger ERROR! 不正なページ移動です
+  //-     button.delete
