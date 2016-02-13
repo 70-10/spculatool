@@ -44,37 +44,35 @@ var woeid = {"nkyu": "1110809", // "北九州"
 
   console.log(woeid.japa);
 
-function getTrend(callback){
+var getTrend = function (callback) {
   client.get('trends/place',{ id: woeid.japa}, function(error, tweets, response){
     if(error) console.log(error);
     callback(tweets[0].trends);
   });
 }
 
+var insertData = function (word) {
+    var dt = new Date();
+    var formatted = dt.toFormat("YYYY-MM-DD HH24:MI:SS"),
+        create_at = formatted,
+        update_at = formatted;
+    var _word = word;
+    connection.query("SELECT word FROM `words` WHERE `word` = '" + word + "';", 
+                  function (error, results, fields) {
+                    if (results.length === 0) {
+                      connection.query("INSERT INTO `words` (`word`, `createdAt`, `updatedAt`) VALUES ('" + _word + "','" + create_at + "','" + update_at + "');", 
+                                      function (error, results, fields) {
+                                        console.log(results);
+                      });
+                    }
+  });
+}
 
 getTrend(function(trends){
-
-  var dt = new Date();
-  var formatted = dt.toFormat("YYYY-MM-DD HH24:MI:SS");
-  create_at = formatted;
-  update_at = formatted;
-
   for (var i = 0; i < trends.length; i++) {
     var word = trends[i].name;
     if (word) {
-      connection.query("SELECT word FROM `words` WHERE `word` = '" + word + "';", 
-                      function (error, results, fields) {
-                        if (results.length === 0) {
-                            console.log(results);
-                          } else {
-                            console.log(word);
-                        }
-      });
-
-      // connection.query("INSERT INTO `words` (`word`, `createdAt`, `updatedAt`) VALUES ('" + word + "','" + create_at + "','" + update_at + "');", 
-      //                 function (error, results, fields) {
-      //                   console.log(results);
-      // });
+      insertData(word);
     }
   }
 });
